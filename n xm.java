@@ -7,7 +7,7 @@ public class Main {
         int N = sc.nextInt(); 
         int M = sc.nextInt(); 
 
-        int[][] orders = new int[N][2];
+        int[][] o = new int[N][2];
         for (int i = 0; i < N; i++) {
             o[i][0] = sc.nextInt(); 
             o[i][1] = sc.nextInt(); 
@@ -18,8 +18,8 @@ public class Main {
         Arrays.fill(isFree, true);        
 
         for (int i = 0; i < N; i++) {
-            int ot = orders[i][0];
-            int tt = orders[i][1];
+            int ot = o[i][0];
+            int tt = o[i][1];
 
          
             for (int j = 0; j < M; j++) {
@@ -40,7 +40,7 @@ public class Main {
             }
 
             if (k != -1) {
-                ft[k] = orderTime + tt;
+                ft[k] = ot + tt;
                 isFree[k] = false;
                 System.out.println("C" + (i + 1) + " - D" + (k + 1));
             } else {
